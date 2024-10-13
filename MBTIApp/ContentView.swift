@@ -8,14 +8,64 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var selected: String = ""
+    
+    private let selectionOptions = [
+        "A",
+        "B"
+    ]
+    private let selectionOptionsSecond = [
+        "C",
+        "D"
+    ]
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            HStack {
+                
+                Picker("Picker Name",
+                       selection: $selected) {
+                    ForEach(selectionOptions,
+                            id: \.self) {
+                        Text($0)
+                    }
+                }.pickerStyle(.wheel)
+                
+                
+                Picker("Picker Name",
+                       selection: $selected) {
+                    ForEach(selectionOptionsSecond,
+                            id: \.self) {
+                        Text($0)
+                    }
+                }.pickerStyle(.wheel)
+                
+                Picker("Picker Name",
+                       selection: $selected) {
+                    ForEach(selectionOptions,
+                            id: \.self) {
+                        Text($0)
+                    }
+                }.pickerStyle(.wheel)
+                
+                
+                Picker("Picker Name",
+                       selection: $selected) {
+                    ForEach(selectionOptionsSecond,
+                            id: \.self) {
+                        Text($0)
+                    }
+                }.pickerStyle(.wheel)
+                
+            }
+            Button("Go", action:
+                    {
+                
+            })
+            .font(.largeTitle)
+            .buttonStyle(BorderedButtonStyle())
+            .tint(.blue)
         }
-        .padding()
     }
 }
 
