@@ -9,7 +9,13 @@ import SwiftUI
 
 struct TestLink: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            WebManager(url: URL(string: "https://devil.ai/api-personality-test/c42535046b96e1fc1c0c1107d7b1fa156725173cd7a53626326597")!)
+            
+                .ignoresSafeArea()
+                .navigationTitle("MBTI Test")
+                .navigationBarTitleDisplayMode(.inline)
+        }
     }
 }
 

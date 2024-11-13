@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB4758DA2CCD2A200039317C /* GenerateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4758D92CCD2A200039317C /* GenerateView.swift */; };
+		AB4758DC2CCD2B450039317C /* FAQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4758DB2CCD2B450039317C /* FAQView.swift */; };
+		AB4758DE2CCD2D710039317C /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4758DD2CCD2D710039317C /* TestView.swift */; };
+		AB4758E02CCFCF9E0039317C /* WebManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4758DF2CCFCF9E0039317C /* WebManager.swift */; };
+		AB4758E22CCFD6850039317C /* TestLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4758E12CCFD6850039317C /* TestLink.swift */; };
+		AB4758E52CD550DC0039317C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4758E42CD550DC0039317C /* NetworkManager.swift */; };
+		AB4758E72CD552930039317C /* MBTIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4758E62CD552930039317C /* MBTIModel.swift */; };
+		AB4758EC2CD911750039317C /* GenerateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4758EB2CD911750039317C /* GenerateViewModel.swift */; };
+		AB4758EE2CE4E16C0039317C /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4758ED2CE4E16C0039317C /* test.swift */; };
+		ABC0244B2CA04F0D00BF96E8 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC0244A2CA04F0D00BF96E8 /* DataManager.swift */; };
+		ABC0244D2CA069EF00BF96E8 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC0244C2CA069EE00BF96E8 /* DetailView.swift */; };
 		ABE379182C61455D00BCC905 /* MBTIAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE379172C61455D00BCC905 /* MBTIAppApp.swift */; };
 		ABE3791A2C61455D00BCC905 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE379192C61455D00BCC905 /* ContentView.swift */; };
 		ABE3791C2C61456700BCC905 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABE3791B2C61456700BCC905 /* Assets.xcassets */; };
@@ -14,6 +25,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB4758D92CCD2A200039317C /* GenerateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateView.swift; sourceTree = "<group>"; };
+		AB4758DB2CCD2B450039317C /* FAQView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQView.swift; sourceTree = "<group>"; };
+		AB4758DD2CCD2D710039317C /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		AB4758DF2CCFCF9E0039317C /* WebManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebManager.swift; sourceTree = "<group>"; };
+		AB4758E12CCFD6850039317C /* TestLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLink.swift; sourceTree = "<group>"; };
+		AB4758E32CCFDEAC0039317C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB4758E42CD550DC0039317C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		AB4758E62CD552930039317C /* MBTIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTIModel.swift; sourceTree = "<group>"; };
+		AB4758EB2CD911750039317C /* GenerateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateViewModel.swift; sourceTree = "<group>"; };
+		AB4758ED2CE4E16C0039317C /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
+		ABC0244A2CA04F0D00BF96E8 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		ABC0244C2CA069EE00BF96E8 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		ABE379142C61455D00BCC905 /* MBTIApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MBTIApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABE379172C61455D00BCC905 /* MBTIAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTIAppApp.swift; sourceTree = "<group>"; };
 		ABE379192C61455D00BCC905 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +55,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB4758E82CD55A200039317C /* DenerateType */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DenerateType;
+			sourceTree = "<group>";
+		};
+		AB4758E92CD55A550039317C /* Test */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		AB4758EA2CD55A5B0039317C /* FAQ */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FAQ;
+			sourceTree = "<group>";
+		};
+		ABC024492CA04EF500BF96E8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				ABC0244A2CA04F0D00BF96E8 /* DataManager.swift */,
+				AB4758E42CD550DC0039317C /* NetworkManager.swift */,
+				AB4758DF2CCFCF9E0039317C /* WebManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		ABE3790B2C61455D00BCC905 = {
 			isa = PBXGroup;
 			children = (
@@ -51,10 +105,23 @@
 		ABE379162C61455D00BCC905 /* MBTIApp */ = {
 			isa = PBXGroup;
 			children = (
+				AB4758EA2CD55A5B0039317C /* FAQ */,
+				AB4758E92CD55A550039317C /* Test */,
+				AB4758E82CD55A200039317C /* DenerateType */,
 				ABE379172C61455D00BCC905 /* MBTIAppApp.swift */,
 				ABE379192C61455D00BCC905 /* ContentView.swift */,
-				ABE3791B2C61456700BCC905 /* Assets.xcassets */,
+				AB4758D92CCD2A200039317C /* GenerateView.swift */,
+				AB4758ED2CE4E16C0039317C /* test.swift */,
+				AB4758EB2CD911750039317C /* GenerateViewModel.swift */,
+				ABC0244C2CA069EE00BF96E8 /* DetailView.swift */,
+				AB4758DD2CCD2D710039317C /* TestView.swift */,
+				AB4758E12CCFD6850039317C /* TestLink.swift */,
+				AB4758DB2CCD2B450039317C /* FAQView.swift */,
+				ABC024492CA04EF500BF96E8 /* Services */,
+				ABE3792A2C614BA100BCC905 /* Models */,
 				ABE3791D2C61456700BCC905 /* Preview Content */,
+				ABE3791B2C61456700BCC905 /* Assets.xcassets */,
+				AB4758E32CCFDEAC0039317C /* Info.plist */,
 			);
 			path = MBTIApp;
 			sourceTree = "<group>";
@@ -65,6 +132,14 @@
 				ABE3791E2C61456700BCC905 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		ABE3792A2C614BA100BCC905 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AB4758E62CD552930039317C /* MBTIModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +212,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABC0244B2CA04F0D00BF96E8 /* DataManager.swift in Sources */,
 				ABE3791A2C61455D00BCC905 /* ContentView.swift in Sources */,
+				ABC0244D2CA069EF00BF96E8 /* DetailView.swift in Sources */,
+				AB4758EE2CE4E16C0039317C /* test.swift in Sources */,
+				AB4758DA2CCD2A200039317C /* GenerateView.swift in Sources */,
+				AB4758E52CD550DC0039317C /* NetworkManager.swift in Sources */,
+				AB4758DE2CCD2D710039317C /* TestView.swift in Sources */,
+				AB4758E22CCFD6850039317C /* TestLink.swift in Sources */,
+				AB4758E72CD552930039317C /* MBTIModel.swift in Sources */,
+				AB4758DC2CCD2B450039317C /* FAQView.swift in Sources */,
+				AB4758EC2CD911750039317C /* GenerateViewModel.swift in Sources */,
+				AB4758E02CCFCF9E0039317C /* WebManager.swift in Sources */,
 				ABE379182C61455D00BCC905 /* MBTIAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,11 +361,11 @@
 				DEVELOPMENT_TEAM = GXFTAP3CFN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MBTIApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -287,9 +373,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.tio.MBTIApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -304,11 +394,11 @@
 				DEVELOPMENT_TEAM = GXFTAP3CFN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MBTIApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -316,9 +406,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.tio.MBTIApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
