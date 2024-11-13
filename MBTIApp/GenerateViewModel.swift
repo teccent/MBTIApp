@@ -12,11 +12,11 @@ protocol GenerateViewModelProtocol {
     var secondLetters: [String] { get }
     var thirdLetters: [String] { get }
     var fourthLetters: [String] { get }
-    
+    /*
     var firstSelected: String { get }
     var secondSelected: String { get }
     var thirdSelected: String { get }
-    var fourthSelected: String { get }
+    var fourthSelected: String { get } */
     var selectedDescription: String { get }
     
     //var showsDetailView: Bool { get }
@@ -33,7 +33,7 @@ class GenerateViewModel: GenerateViewModelProtocol, ObservableObject {
     var thirdLetters = ["T", "F"]
     
     var fourthLetters = ["J", "P"]
-    
+    /*
     var firstSelected = "E"
     
     var secondSelected = "S"
@@ -41,7 +41,7 @@ class GenerateViewModel: GenerateViewModelProtocol, ObservableObject {
     var thirdSelected = "T"
     
     var fourthSelected = "J"
-    
+    */
     var selectedDescription = ""
     
     //var showsDetailView = false

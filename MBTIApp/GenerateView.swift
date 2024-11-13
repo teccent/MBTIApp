@@ -9,12 +9,12 @@ import SwiftUI
 
 struct GenerateView: View {
     @StateObject var viewModel: GenerateViewModel
-    /*
+    
     @AppStorage("firstSelected") private var firstSelected = "E"
     @AppStorage("secondSelected") private var secondSelected = "S"
     @AppStorage("thirdSelected") private var thirdSelected = "T"
     @AppStorage("fourthSelected") private var fourthSelected = "J"
-    */
+    
     @State var showsDetailView = false
     
     var body: some View {
@@ -23,28 +23,28 @@ struct GenerateView: View {
                 HStack(spacing: 5) {
                     Picker("First letter",
                            selection: 
-                            $viewModel.firstSelected) {
+                            $firstSelected) {
                         ForEach(viewModel.firstLetters,
                                 id: \.self) {
                             Text($0)
                         }
                     }.pickerStyle(.wheel)
                     Picker("Second Name",
-                           selection: $viewModel.secondSelected) {
+                           selection: $secondSelected) {
                         ForEach(viewModel.secondLetters,
                                 id: \.self) {
                             Text($0)
                         }
                     }.pickerStyle(.wheel)
                     Picker("Third Name",
-                           selection: $viewModel.thirdSelected) {
+                           selection: $thirdSelected) {
                         ForEach(viewModel.thirdLetters,
                                 id: \.self) {
                             Text($0)
                         }
                     }.pickerStyle(.wheel)
                     Picker("Fourth Name",
-                           selection: $viewModel.fourthSelected) {
+                           selection: $fourthSelected) {
                         ForEach(viewModel.fourthLetters,
                                 id: \.self) {
                             Text($0)
@@ -53,10 +53,10 @@ struct GenerateView: View {
                 }
                 Button("Generate type", action:{
                     let chosenCombination: String =
-                    $viewModel.firstSelected.wrappedValue +
-                    $viewModel.secondSelected.wrappedValue +
-                    $viewModel.thirdSelected.wrappedValue +
-                    $viewModel.fourthSelected.wrappedValue
+                    firstSelected +
+                    secondSelected +
+                    thirdSelected +
+                    fourthSelected
                     
                     $viewModel.selectedDescription.wrappedValue = viewModel.types.first {
                         $0.key == chosenCombination
@@ -69,10 +69,10 @@ struct GenerateView: View {
             }
         }.sheet(isPresented: $showsDetailView) {
             DetailView(
-                firstLetter: $viewModel.firstSelected,
-                secondLetter: $viewModel.secondSelected,
-                thirdLetter: $viewModel.thirdSelected,
-                fourthLetter: $viewModel.fourthSelected,
+                firstLetter: $firstSelected,
+                secondLetter: $secondSelected,
+                thirdLetter: $thirdSelected,
+                fourthLetter: $fourthSelected,
                 description: $viewModel.selectedDescription)
         }
     }
