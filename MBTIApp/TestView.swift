@@ -10,7 +10,15 @@ import SwiftUI
 struct TestView: View {
     
     @State private var isPresentWebView = false
-    var model: MBTIModel?
+    @StateObject private var appState = AppState() // Используем AppState
+    @StateObject private var viewModel: TestViewModel
+    
+    init() {
+            // Инициализируем viewModel с новым экземпляром AppState
+            let appState = AppState()
+            self._appState = StateObject(wrappedValue: appState)
+            self._viewModel = StateObject(wrappedValue: TestViewModel(appState: appState))
+        }
     
     var body: some View {
         
@@ -19,10 +27,13 @@ struct TestView: View {
                 Text("Your results:")
                     .font(.title)
                     .bold()
-                Text("about")
+                Text(appState.predictionResult)
                 Spacer()
-                NavigationLink("Go to the Test", destination: TestLink())
+                NavigationLink("Go to the Test", destination: TestLink(appState: appState))
                 Spacer()
+            }
+            .onAppear {
+                viewModel.loadResult() // Загружаем результаты при появлении представления
             }
         }
     }

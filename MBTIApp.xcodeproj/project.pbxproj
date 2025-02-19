@@ -15,7 +15,9 @@
 		AB4758E52CD550DC0039317C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4758E42CD550DC0039317C /* NetworkManager.swift */; };
 		AB4758E72CD552930039317C /* MBTIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4758E62CD552930039317C /* MBTIModel.swift */; };
 		AB4758EC2CD911750039317C /* GenerateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4758EB2CD911750039317C /* GenerateViewModel.swift */; };
-		AB4758EE2CE4E16C0039317C /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4758ED2CE4E16C0039317C /* test.swift */; };
+		AB4758F02CEA1F680039317C /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4758EF2CEA1F680039317C /* TestViewModel.swift */; };
+		ABA5ABD22D634C2800FB8118 /* NewTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA5ABD12D634C2800FB8118 /* NewTestModel.swift */; };
+		ABA5ABD42D635B9100FB8118 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA5ABD32D635B9100FB8118 /* AppState.swift */; };
 		ABC0244B2CA04F0D00BF96E8 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC0244A2CA04F0D00BF96E8 /* DataManager.swift */; };
 		ABC0244D2CA069EF00BF96E8 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC0244C2CA069EE00BF96E8 /* DetailView.swift */; };
 		ABE379182C61455D00BCC905 /* MBTIAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE379172C61455D00BCC905 /* MBTIAppApp.swift */; };
@@ -34,7 +36,9 @@
 		AB4758E42CD550DC0039317C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		AB4758E62CD552930039317C /* MBTIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTIModel.swift; sourceTree = "<group>"; };
 		AB4758EB2CD911750039317C /* GenerateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateViewModel.swift; sourceTree = "<group>"; };
-		AB4758ED2CE4E16C0039317C /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
+		AB4758EF2CEA1F680039317C /* TestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
+		ABA5ABD12D634C2800FB8118 /* NewTestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTestModel.swift; sourceTree = "<group>"; };
+		ABA5ABD32D635B9100FB8118 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		ABC0244A2CA04F0D00BF96E8 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		ABC0244C2CA069EE00BF96E8 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		ABE379142C61455D00BCC905 /* MBTIApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MBTIApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,11 +115,12 @@
 				ABE379172C61455D00BCC905 /* MBTIAppApp.swift */,
 				ABE379192C61455D00BCC905 /* ContentView.swift */,
 				AB4758D92CCD2A200039317C /* GenerateView.swift */,
-				AB4758ED2CE4E16C0039317C /* test.swift */,
 				AB4758EB2CD911750039317C /* GenerateViewModel.swift */,
 				ABC0244C2CA069EE00BF96E8 /* DetailView.swift */,
 				AB4758DD2CCD2D710039317C /* TestView.swift */,
+				AB4758EF2CEA1F680039317C /* TestViewModel.swift */,
 				AB4758E12CCFD6850039317C /* TestLink.swift */,
+				ABA5ABD32D635B9100FB8118 /* AppState.swift */,
 				AB4758DB2CCD2B450039317C /* FAQView.swift */,
 				ABC024492CA04EF500BF96E8 /* Services */,
 				ABE3792A2C614BA100BCC905 /* Models */,
@@ -138,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				AB4758E62CD552930039317C /* MBTIModel.swift */,
+				ABA5ABD12D634C2800FB8118 /* NewTestModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -212,11 +218,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABA5ABD22D634C2800FB8118 /* NewTestModel.swift in Sources */,
 				ABC0244B2CA04F0D00BF96E8 /* DataManager.swift in Sources */,
 				ABE3791A2C61455D00BCC905 /* ContentView.swift in Sources */,
+				AB4758F02CEA1F680039317C /* TestViewModel.swift in Sources */,
 				ABC0244D2CA069EF00BF96E8 /* DetailView.swift in Sources */,
-				AB4758EE2CE4E16C0039317C /* test.swift in Sources */,
 				AB4758DA2CCD2A200039317C /* GenerateView.swift in Sources */,
+				ABA5ABD42D635B9100FB8118 /* AppState.swift in Sources */,
 				AB4758E52CD550DC0039317C /* NetworkManager.swift in Sources */,
 				AB4758DE2CCD2D710039317C /* TestView.swift in Sources */,
 				AB4758E22CCFD6850039317C /* TestLink.swift in Sources */,
