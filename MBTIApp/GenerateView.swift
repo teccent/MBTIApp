@@ -58,7 +58,7 @@ struct GenerateView: View {
                     thirdSelected +
                     fourthSelected
                     
-                    $viewModel.selectedDescription.wrappedValue = viewModel.types.first {
+                    viewModel.selectedDescription = viewModel.types.first {
                         $0.key == chosenCombination
                     }?.value ?? ""
                     $showsDetailView.wrappedValue = true

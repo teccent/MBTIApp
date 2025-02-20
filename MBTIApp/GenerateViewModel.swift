@@ -20,13 +20,13 @@ class GenerateViewModel: GenerateViewModelProtocol, ObservableObject {
     
     let types = DataManager.shared.types
     
-    var firstLetters = ["E", "I"]
+    let firstLetters = ["E", "I"]
     
-    var secondLetters = ["S", "N"]
+    let secondLetters = ["S", "N"]
     
-    var thirdLetters = ["T", "F"]
+    let thirdLetters = ["T", "F"]
     
-    var fourthLetters = ["J", "P"]
+    let fourthLetters = ["J", "P"]
 
     var selectedDescription = ""
 }
