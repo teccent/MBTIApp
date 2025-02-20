@@ -1,19 +1,18 @@
-- [Описание](#--------)
+# Содержание
   * [1. ContentView](#1-contentview)
   * [2. GenerateView](#2-generateview)
   * [3. GenerateViewModel](#3-generateviewmodel)
-  * [4. DetailView](#4-detailview-------------------------)
+  * [4. DetailView](#4-detailview)
   * [5. FAQView](#5-faqview)
   * [6. DataManager](#6-datamanager)
   * [7. WebManager](#7-webmanager)
-  * [8. Модели данных для API](#8-------------------api--mbtimodel--mbtiresponse--apiresponse-)
-- [Как происходит загрузка данных](#------------------------------)
+  * [8. DataModels](#8-datamodels)
+- [DataLoad](#dataload)
   * [1. NetworkManager](#1-networkmanager)
   * [2. TestViewModel](#2-testviewmodel)
   * [3. TestView](#3-testview)
   * [4. TestLink](#4-testlink)
-  * [Передача данных между компонентами](#----------------------------------)
-
+---
 ## Описание
 ### 1. ContentView
 Отвечает за отображение трёх основных вкладок:
@@ -60,13 +59,13 @@
 
 •	Отвечает за отображение веб-страницы через WKWebView.
 
-### 8. Модели данных для API (MBTIModel, MBTIResponse, ApiResponse)
+### 8. DataModels
 
 •	Структуры для парсинга данных из JSON-ответов от сервера.
 
 •	Четко разделены на мета-информацию (Meta) и данные теста (DataResponse).
 
-## Как происходит загрузка данных
+## DataLoad
 ### 1. NetworkManager
 Класс NetworkManager отвечает за выполнение сетевых запросов.
 
