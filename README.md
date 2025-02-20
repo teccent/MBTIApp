@@ -1,3 +1,71 @@
+- [Описание](#--------)
+  * [1. ContentView](#1-contentview)
+  * [2. GenerateView](#2-generateview)
+  * [3. GenerateViewModel](#3-generateviewmodel)
+  * [4. DetailView](#4-detailview-------------------------)
+  * [5. FAQView](#5-faqview)
+  * [6. DataManager](#6-datamanager)
+  * [7. WebManager](#7-webmanager)
+  * [8. Модели данных для API](#8-------------------api--mbtimodel--mbtiresponse--apiresponse-)
+- [Как происходит загрузка данных](#------------------------------)
+  * [1. NetworkManager](#1-networkmanager)
+  * [2. TestViewModel](#2-testviewmodel)
+  * [3. TestView](#3-testview)
+  * [4. TestLink](#4-testlink)
+  * [Передача данных между компонентами](#----------------------------------)
+
+## Описание
+### 1. ContentView
+Отвечает за отображение трёх основных вкладок:
+
+•	GenerateView — для генерации MBTI типа.
+
+•	TestView — для прохождения тестов.
+
+•	FAQView — для информации о MBTI.
+
+•	Использует TabView с иконками и подписями.
+
+### 2. GenerateView
+
+•	Отображает 4 Picker, каждый из которых выбирает одну из букв MBTI (например, E/I, S/N).
+
+•	Кнопка “Generate type” создает комбинацию выбранных букв и ищет описание через GenerateViewModel.
+
+•	Показывает модальное окно (DetailView) с описанием выбранного типа.
+
+### 3. GenerateViewModel
+
+•	Хранит возможные буквы MBTI и описания типов из DataManager.
+
+•	Следит за состоянием выбранного описания типа.
+
+### 4. DetailView
+
+•	Показывает сгенерированный MBTI код и описание выбранного типа.
+
+•	Использует @Binding для связи с родительским вью.
+
+### 5. FAQView 
+
+•	Заготовка для текста о системе MBTI.
+
+•	Использует ScrollView для отображения длинного текста.
+
+### 6. DataManager
+
+•	Хранит словарь с описаниями типов MBTI.
+
+### 7. WebManager
+
+•	Отвечает за отображение веб-страницы через WKWebView.
+
+### 8. Модели данных для API (MBTIModel, MBTIResponse, ApiResponse)
+
+•	Структуры для парсинга данных из JSON-ответов от сервера.
+
+•	Четко разделены на мета-информацию (Meta) и данные теста (DataResponse).
+
 ## Как происходит загрузка данных
 ### 1. NetworkManager
 Класс NetworkManager отвечает за выполнение сетевых запросов.
