@@ -20,9 +20,11 @@ struct DetailView: View {
         
         VStack(spacing: 30){
             Text(savedCode)
-                .font(.title)
+                .font(.largeTitle)
                 .bold()
+                .foregroundStyle(.blue)
             Text(description)
+            Spacer()
         }.padding()
 
     }

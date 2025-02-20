@@ -7,21 +7,50 @@
 
 import SwiftUI
 
+/*
 struct TestView: View {
     
-    @State private var isPresentWebView = false
     @StateObject private var appState = AppState() // Используем AppState
     @StateObject private var viewModel: TestViewModel
     
     init() {
-            // Инициализируем viewModel с новым экземпляром AppState
-            let appState = AppState()
-            self._appState = StateObject(wrappedValue: appState)
-            self._viewModel = StateObject(wrappedValue: TestViewModel(appState: appState))
-        }
+        // Инициализируем viewModel с новым экземпляром AppState
+        let appState = AppState()
+        self._appState = StateObject(wrappedValue: appState)
+        self._viewModel = StateObject(wrappedValue: TestViewModel(appState: appState))
+    }
     
     var body: some View {
-        
+         NavigationView {
+                     VStack {
+                         Text("Your results:")
+                             .font(.title)
+                             .bold()
+                         Text(appState.predictionResult)
+                         Spacer()
+                         NavigationLink("Go to the Test", destination: TestLink(appState: AppState()))
+                         Spacer()
+                     }
+                     .onAppear {
+                         viewModel.loadResult() // Загружаем результаты при появлении представления
+                     }
+                 }
+    }
+}
+ */
+
+/*
+struct TestView: View {
+    @StateObject private var appState = AppState()
+    @StateObject private var viewModel: TestViewModel
+    
+    init() {
+        let appState = AppState()
+        self._appState = StateObject(wrappedValue: appState)
+        self._viewModel = StateObject(wrappedValue: TestViewModel(appState: appState))
+    }
+    
+    var body: some View {
         NavigationView {
             VStack {
                 Text("Your results:")
@@ -29,15 +58,82 @@ struct TestView: View {
                     .bold()
                 Text(appState.predictionResult)
                 Spacer()
-                NavigationLink("Go to the Test", destination: TestLink(appState: appState))
+                NavigationLink(destination: TestLink(appState: appState)
+                                .onDisappear {
+                                    // Загружаем результаты только если testId есть
+                                    if let testId = appState.testId {
+                                        viewModel.loadResult(testId: testId)
+                                    }
+                                }) {
+                    Text("Go to the Test")
+                }
                 Spacer()
-            }
-            .onAppear {
-                viewModel.loadResult() // Загружаем результаты при появлении представления
             }
         }
     }
 }
+*/
+
+struct TestView: View {
+    @StateObject private var appState = AppState()
+    @StateObject private var viewModel: TestViewModel
+
+    init() {
+        let appState = AppState()
+        self._appState = StateObject(wrappedValue: appState)
+        self._viewModel = StateObject(wrappedValue: TestViewModel(appState: appState))
+    }
+
+    var body: some View {
+        NavigationView {
+            VStack(spacing: 10) { // Добавляем отступы между элементами
+                Text("Your results:")
+                    .font(.largeTitle)
+                    .bold()
+                    .foregroundStyle(.blue)
+                    .padding(.top, 20)
+                
+                // Показываем все сохраненные результаты как текстовые блоки
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 8) {
+                        ForEach(appState.predictions.indices, id: \.self) { index in
+                            Text("\(index + 1). \(appState.predictions[index])")
+                                .padding()
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .background(Color.gray.opacity(0.2))
+                                .cornerRadius(8)
+                        }
+                    }
+                    .padding(.horizontal)
+                }
+                
+                //Spacer()
+
+                NavigationLink(destination: TestLink(appState: appState)
+                    .onDisappear {
+                        if let testId = appState.testId {
+                            viewModel.loadResult(testId: testId)
+                        }
+                    }) {
+                    Text("Go to the Test")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.blue)
+                        .cornerRadius(10)
+                        .padding(.horizontal, 20)
+                }
+                    .padding(.top, 20)
+                    .buttonStyle(PlainButtonStyle())
+                    .padding(.bottom, 50)
+
+                //Spacer()
+            }
+        }
+    }
+}
+
 
 #Preview {
     TestView()

@@ -7,21 +7,126 @@
 
 import Foundation
 
+
 protocol TestViewModelProtocol {
     
-    func fetchResults(completion: @escaping (Result<TestViewModel.Results, Error>) -> Void)
-
-    func loadResult()
+    func fetchResults(testId: String, completion: @escaping (Result<TestViewModel.Results, Error>) -> Void)
+    func loadResult(testId: String)
     
 }
 
+class TestViewModel: TestViewModelProtocol, ObservableObject {
+    private var appState: AppState
+
+    init(appState: AppState) {
+        self.appState = appState
+    }
+
+    struct Results {
+        let prediction: String
+        let testId: String
+        let resultsPage: URL
+    }
+
+    func fetchResults(testId: String, completion: @escaping (Result<Results, Error>) -> Void) {
+        NetworkManager.shared.fetchData(testId: testId) { result in
+            switch result {
+                case .success(let mbtiData):
+                    let results = Results(
+                        prediction: mbtiData.prediction,
+                        testId: mbtiData.testId,
+                        resultsPage: mbtiData.resultsPage
+                    )
+                    DispatchQueue.main.async {
+                        completion(.success(results))
+                    }
+                case .failure(let error):
+                    DispatchQueue.main.async {
+                        completion(.failure(error))
+                    }
+            }
+        }
+    }
+
+    func loadResult(testId: String) {
+        fetchResults(testId: testId) { result in
+            switch result {
+                case .success(let results):
+                    DispatchQueue.main.async {
+                        self.appState.predictions.append(results.prediction)
+                    }
+                case .failure:
+                    DispatchQueue.main.async {
+                        self.appState.predictions.append("No prediction")
+                    }
+            }
+        }
+    }
+}
+
+/*
+class TestViewModel: TestViewModelProtocol, ObservableObject {
+    private var appState: AppState
+
+    init(appState: AppState) {
+        self.appState = appState
+    }
+
+    struct Results {
+        let prediction: String
+        let testId: String
+        let resultsPage: URL
+    }
+
+    func fetchResults(testId: String, completion: @escaping (Result<Results, Error>) -> Void) {
+        NetworkManager.shared.fetchData(testId: testId) { result in
+            switch result {
+                case .success(let mbtiData):
+                    let results = Results(
+                        prediction: mbtiData.prediction,
+                        testId: mbtiData.testId,
+                        resultsPage: mbtiData.resultsPage
+                    )
+                    DispatchQueue.main.async {
+                        print("Успешно загружены данные from fetchResults: \(results)")
+                        completion(.success(results))
+                    }
+                case .failure(let error):
+                    DispatchQueue.main.async {
+                        print("Ошибка при загрузке данных: \(error.localizedDescription)")
+                        completion(.failure(error))
+                    }
+            }
+        }
+    }
+
+    func loadResult(testId: String) {
+        print("Загрузка результатов для testId: \(testId)") // Проверка
+        fetchResults(testId: testId) { result in
+            switch result {
+                case .success(let results):
+                    DispatchQueue.main.async {
+                        self.appState.predictionResult = results.prediction
+                    }
+                case .failure(let error):
+                    print("Ошибка: \(error.localizedDescription)")
+                    DispatchQueue.main.async {
+                        self.appState.predictionResult = "No prediction"
+                    }
+            }
+        }
+    }
+}
+*/
+
+/*
 class TestViewModel: TestViewModelProtocol, ObservableObject {
     
     private var appState: AppState
     
     init(appState: AppState) {
-            self.appState = appState
-        }
+        self.appState = appState
+    }
     
     // Структура для результатов
     struct Results {
@@ -29,8 +134,6 @@ class TestViewModel: TestViewModelProtocol, ObservableObject {
         let testId: String
         let resultsPage: URL
     }
-    
-    //@Published var predictionResult: String = "Loading..." // Значение по умолчанию
     
     // Функция для загрузки и возврата результатов
     func fetchResults(completion: @escaping (Result<Results, Error>) -> Void) {
@@ -52,61 +155,27 @@ class TestViewModel: TestViewModelProtocol, ObservableObject {
             }
         }
     }
-    
-    func loadResult() {
-        print("Загрузка результатов...") //проверка
-            // Вызываем fetchResults
-            fetchResults { result in
-                switch result {
-                case .success(let results):
-                    // Успешно получили данные
-                        print("Успешно загружены данные from loadResult: \(results)") //проверка
+        
+    func loadResult(testId: String) {
+        print("Загрузка результатов для testId: \(testId)") // Проверка
+        NetworkManager.shared.fetchData(testId: testId) { result in
+            switch result {
+                case .success(let mbtiData):
+                    let results = Results(
+                        prediction: mbtiData.prediction,
+                        testId: mbtiData.testId,
+                        resultsPage: mbtiData.resultsPage
+                    )
                     DispatchQueue.main.async {
-                        // Обновляем appState вместо self.predictionResult
                         self.appState.predictionResult = results.prediction
-                        print("appState - \(self.appState.predictionResult)")
                     }
                 case .failure(let error):
-                    // Обрабатываем ошибку
                     print("Ошибка: \(error.localizedDescription)")
                     DispatchQueue.main.async {
-                        self.appState.predictionResult = "no prediction"
+                        self.appState.predictionResult = "No prediction"
                     }
-                }
             }
         }
-    
-}
-
-/*
-NetworkManager.shared.fetchData { results in
-    self.results = results
-    completion()
-}
- */
-
-
-/*
-NetworkManager.shared.fetchData { [unowned self] results in
-    self.results = results
-    completion()
-}
- */
-
-//    func getResult() -> String {
-//        results?.prediction ?? "no prediction"
-//    }
-/*
-func getResult(completion: @escaping (String) -> Void) {
-fetchResults { result in
-    switch result {
-    case .success(let results):
-        // Возвращаем значение prediction
-        completion(results.prediction)
-    case .failure:
-        // В случае ошибки возвращаем "no prediction"
-        completion("no prediction")
     }
-}
 }
 */
