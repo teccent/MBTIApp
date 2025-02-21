@@ -8,29 +8,26 @@
 import SwiftUI
 
 struct DetailView: View {
-    @Binding var firstLetter: String
-    @Binding var secondLetter: String
-    @Binding var thirdLetter: String
-    @Binding var fourthLetter: String
-    @Binding var description: String
+    @Binding var url: URL?
     
    
     var body: some View {
-        let savedCode = $firstLetter.wrappedValue + $secondLetter.wrappedValue + $thirdLetter.wrappedValue + $fourthLetter.wrappedValue
-        
-        VStack(spacing: 30){
-            Text(savedCode)
-                .font(.largeTitle)
-                .bold()
-                .foregroundStyle(.blue)
-            Text(description)
-            Spacer()
-        }.padding()
-
+        VStack {
+            if let url = url {
+                WebManager(url: url)
+                    .edgesIgnoringSafeArea(.all)
+            } else {
+                Text("No URL available")
+                    .foregroundStyle(.gray)
+            }
+        }
+        .padding()
     }
 }
 
 
 #Preview {
-    DetailView(firstLetter: .constant("E"), secondLetter: .constant("S"), thirdLetter: .constant("T"), fourthLetter: .constant("P"), description: .constant("Some description"))
+    DetailView(
+        url: .constant(URL(string: "https://www.16personalities.com/intj-personality"))
+    )
 }

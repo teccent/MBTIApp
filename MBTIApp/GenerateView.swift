@@ -15,7 +15,8 @@ struct GenerateView: View {
     @AppStorage("thirdSelected") private var thirdSelected = "T"
     @AppStorage("fourthSelected") private var fourthSelected = "J"
     
-    @State var showsDetailView = false
+    @State private var showsDetailView = false
+    @State private var selectedURL: URL? = nil
     
     var body: some View {
         NavigationView {
@@ -51,6 +52,7 @@ struct GenerateView: View {
                         }
                     }.pickerStyle(.wheel)
                 }
+                
                 Button("Generate type", action:{
                     let chosenCombination: String =
                     firstSelected +
@@ -58,23 +60,20 @@ struct GenerateView: View {
                     thirdSelected +
                     fourthSelected
                     
-                    viewModel.selectedDescription = viewModel.types.first {
-                        $0.key == chosenCombination
-                    }?.value ?? ""
-                    $showsDetailView.wrappedValue = true
+                    if let urlString = viewModel.typeLinks[chosenCombination], let url = URL(string: urlString) {
+                        selectedURL = url
+                        showsDetailView = true
+                    }
                 })
                 .font(.title)
                 .buttonStyle(BorderedButtonStyle())
                 .tint(.blue)
             }
-        }.sheet(isPresented: $showsDetailView) {
-            DetailView(
-                firstLetter: $firstSelected,
-                secondLetter: $secondSelected,
-                thirdLetter: $thirdSelected,
-                fourthLetter: $fourthSelected,
-                description: $viewModel.selectedDescription)
+            .sheet(isPresented: $showsDetailView) {
+                DetailView(url: $selectedURL)
+            }
         }
+         
     }
 }
 
