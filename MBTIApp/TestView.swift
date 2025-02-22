@@ -90,7 +90,7 @@ struct TestView: View {
                 Text("Your results:")
                     .font(.largeTitle)
                     .bold()
-                    .foregroundStyle(.blue)
+                    .foregroundStyle(Color(hue: 0.47, saturation: 0.943, brightness: 0.639))
                     .padding(.top, 20)
                 // Показываем все сохраненные результаты как текстовые блоки
                 ScrollView {
@@ -116,13 +116,15 @@ struct TestView: View {
                             .foregroundColor(.white)
                             .padding()
                             .frame(maxWidth: .infinity)
-                            .background(Color.blue)
+                            .background(Color(hue: 0.47, saturation: 0.943, brightness: 0.639))
                             .cornerRadius(15)
                             .padding(.horizontal, 20)
                     }
                     .padding(.bottom, 20)
 
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background((Color(hue: 0.47, saturation: 1.0, brightness: 0.809, opacity: 0.087)).ignoresSafeArea())
         }
     }
 }

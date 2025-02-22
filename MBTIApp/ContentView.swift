@@ -12,22 +12,23 @@ struct ContentView: View {
         TabView {
             GenerateView(viewModel: GenerateViewModel())
                 .tabItem {
-                    Image(systemName: "filemenu.and.cursorarrow")
+                    Image(systemName: "moonphase.waning.crescent")
                     Text("Generate Type")
                 }
             
             TestView()
                 .tabItem {
-                    Image(systemName: "person.and.background.striped.horizontal")
+                    Image(systemName: "moonphase.new.moon.inverse")
                     Text("Test")
                 }
             
             FAQView()
                 .tabItem {
-                    Image(systemName: "questionmark.bubble")
+                    Image(systemName: "moonphase.waning.gibbous.inverse")
                     Text("FAQ")
                 }
         }
+        .tint((Color(hue: 0.47, saturation: 0.943, brightness: 0.639)))
     }
     
 }

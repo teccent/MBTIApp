@@ -111,8 +111,6 @@ struct TestLink: View {
                 if let url = testUrl {
                     WebManager(url: url)
                         .ignoresSafeArea()
-                        .navigationTitle("MBTI Test")
-                        .navigationBarTitleDisplayMode(.inline)
                 } else if isLoading {
                     ProgressView("Loading...")
                 } else {

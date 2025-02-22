@@ -14,14 +14,17 @@ struct FAQView: View {
                 Text("What id MBTI?")
                     .font(.largeTitle)
                     .bold()
-                    .foregroundStyle(.blue)
+                    .foregroundStyle(Color(hue: 0.47, saturation: 0.943, brightness: 0.639))
                 Text("The Myers-Briggs Personality Type Indicator is a self-report inventory designed to identify a person's personality type, strengths, and preferences. The questionnaire was developed by Isabel Myers and her mother Katherine Briggs based on their work with Carl Jung's theory of personality types. Today, the MBTI inventory is one of the world's most widely used psychological instruments.")
                 Text("Both Myers and Briggs were fascinated by Jung's theory of psychological types and recognized that the theory could have real-world applications. During World War II, they began researching and developing an indicator that could be utilized to help understand individual differences.")
                 Text("Based on the answers to the questions on the inventory, people are identified as having one of 16 personality types. The goal of the MBTI is to allow respondents to further explore and understand their own personalities including their likes, dislikes, strengths, weaknesses, possible career preferences, and compatibility with other people.")
                 Text("MBTI types")
                     .font(.largeTitle)
                     .bold()
-                    .foregroundStyle(.blue)
+                    .foregroundStyle(Color(hue: 0.47, saturation: 0.943, brightness: 0.639))
+                Image("faq_image")
+                    .resizable()
+                    .scaledToFit()
                 Text("Extraversion (E) – Introversion (I)")
                     .bold()
                 Text("The extraversion-introversion dichotomy was first explored by Jung in his theory of personality types as a way to describe how people respond and interact with the world around them. While these terms are familiar to most people, the way in which they are used in the MBTI differs somewhat from their popular usage.")
@@ -41,6 +44,8 @@ struct FAQView: View {
             }
             .padding(.horizontal, 15)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background((Color(hue: 0.47, saturation: 1.0, brightness: 0.809, opacity: 0.087)).ignoresSafeArea())
     }
 }
 

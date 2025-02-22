@@ -53,7 +53,7 @@ struct GenerateView: View {
                     }.pickerStyle(.wheel)
                 }
                 
-                Button("Generate type", action:{
+                Button("More about type", action:{
                     let chosenCombination: String =
                     firstSelected +
                     secondSelected +
@@ -67,11 +67,13 @@ struct GenerateView: View {
                 })
                 .font(.title)
                 .buttonStyle(BorderedButtonStyle())
-                .tint(.blue)
+                .tint(Color(hue: 0.47, saturation: 0.943, brightness: 0.639))
             }
             .sheet(isPresented: $showsDetailView) {
                 DetailView(url: $selectedURL)
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background((Color(hue: 0.47, saturation: 1.0, brightness: 0.809, opacity: 0.087)).ignoresSafeArea())
         }
          
     }

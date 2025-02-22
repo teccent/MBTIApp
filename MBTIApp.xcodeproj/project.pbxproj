@@ -18,6 +18,8 @@
 		AB4758F02CEA1F680039317C /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4758EF2CEA1F680039317C /* TestViewModel.swift */; };
 		ABA5ABD22D634C2800FB8118 /* NewTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA5ABD12D634C2800FB8118 /* NewTestModel.swift */; };
 		ABA5ABD42D635B9100FB8118 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA5ABD32D635B9100FB8118 /* AppState.swift */; };
+		ABB3D0102D6A37F000AA7B96 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABB3D00F2D6A37F000AA7B96 /* Launch Screen.storyboard */; };
+		ABB3D0122D6A3CB400AA7B96 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB3D0112D6A3CB400AA7B96 /* SplashView.swift */; };
 		ABC0244B2CA04F0D00BF96E8 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC0244A2CA04F0D00BF96E8 /* DataManager.swift */; };
 		ABC0244D2CA069EF00BF96E8 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC0244C2CA069EE00BF96E8 /* DetailView.swift */; };
 		ABE379182C61455D00BCC905 /* MBTIAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE379172C61455D00BCC905 /* MBTIAppApp.swift */; };
@@ -39,6 +41,8 @@
 		AB4758EF2CEA1F680039317C /* TestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
 		ABA5ABD12D634C2800FB8118 /* NewTestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTestModel.swift; sourceTree = "<group>"; };
 		ABA5ABD32D635B9100FB8118 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		ABB3D00F2D6A37F000AA7B96 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		ABB3D0112D6A3CB400AA7B96 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		ABC0244A2CA04F0D00BF96E8 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		ABC0244C2CA069EE00BF96E8 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		ABE379142C61455D00BCC905 /* MBTIApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MBTIApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +66,7 @@
 		AB4758E82CD55A200039317C /* DenerateType */ = {
 			isa = PBXGroup;
 			children = (
+				ABB3D00F2D6A37F000AA7B96 /* Launch Screen.storyboard */,
 			);
 			path = DenerateType;
 			sourceTree = "<group>";
@@ -113,6 +118,7 @@
 				AB4758E92CD55A550039317C /* Test */,
 				AB4758E82CD55A200039317C /* DenerateType */,
 				ABE379172C61455D00BCC905 /* MBTIAppApp.swift */,
+				ABB3D0112D6A3CB400AA7B96 /* SplashView.swift */,
 				ABE379192C61455D00BCC905 /* ContentView.swift */,
 				AB4758D92CCD2A200039317C /* GenerateView.swift */,
 				AB4758EB2CD911750039317C /* GenerateViewModel.swift */,
@@ -206,6 +212,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABB3D0102D6A37F000AA7B96 /* Launch Screen.storyboard in Resources */,
 				ABE3791F2C61456700BCC905 /* Preview Assets.xcassets in Resources */,
 				ABE3791C2C61456700BCC905 /* Assets.xcassets in Resources */,
 			);
@@ -219,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABA5ABD22D634C2800FB8118 /* NewTestModel.swift in Sources */,
+				ABB3D0122D6A3CB400AA7B96 /* SplashView.swift in Sources */,
 				ABC0244B2CA04F0D00BF96E8 /* DataManager.swift in Sources */,
 				ABE3791A2C61455D00BCC905 /* ContentView.swift in Sources */,
 				AB4758F02CEA1F680039317C /* TestViewModel.swift in Sources */,
